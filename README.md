@@ -33,7 +33,7 @@ cd mirrord-go-debug-example
 
 ```bash
 kubectl create -f ./kube
-```
+``` 
 
 3. Debug with mirrord:
 
