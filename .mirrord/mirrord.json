@@ -1,0 +1,14 @@
+{
+    "feature": {
+        "network": {
+            "incoming": "mirror",
+            "outgoing": true
+        },
+        "fs": "read",
+        "env": true
+    },
+    "target": {
+        "path": "deployment/guestbook",
+        "namespace": "default"
+    }
+}

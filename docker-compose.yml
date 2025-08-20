@@ -1,0 +1,36 @@
+services:
+  guestbook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis-master
+      - redis-replica
+    environment:
+      - REDIS_MASTER_HOST=redis-master
+      - REDIS_REPLICA_HOST=redis-replica
+    networks:
+      - guestbook-network
+
+  redis-master:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - guestbook-network
+
+  redis-replica:
+    image: redis:latest
+    command: redis-server --slaveof redis-master 6379
+    depends_on:
+      - redis-master
+    ports:
+      - "6380:6379"
+    networks:
+      - guestbook-network
+
+networks:
+  guestbook-network:
+    driver: bridge 
