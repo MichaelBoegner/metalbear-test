@@ -32,7 +32,6 @@ import (
 
 var (
 	masterPool *simpleredis.ConnectionPool
-	replicaPool  *simpleredis.ConnectionPool
 )
 
 type ErrorResponse struct {
@@ -133,12 +132,6 @@ func main() {
 	}
 	defer masterPool.Close()
 	
-	replicaPool, err = initializeRedisConnection("redis-replica:6379", maxRetries)
-	if err != nil {
-		log.Fatalf("Failed to initialize Redis replica connection: %v", err)
-	}
-	defer replicaPool.Close()
-
 	r := mux.NewRouter()
 	r.Path("/lrange/{key}").Methods("GET").HandlerFunc(ListRangeHandler)
 	r.Path("/rpush/{key}/{value}").Methods("GET").HandlerFunc(ListPushHandler)
