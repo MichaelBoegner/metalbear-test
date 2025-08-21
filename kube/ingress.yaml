@@ -27,7 +27,7 @@ spec:
           service:
             name: api
             port:
-              number: 3000
+              number: 3000 
       - path: /env
         pathType: Prefix
         backend:
