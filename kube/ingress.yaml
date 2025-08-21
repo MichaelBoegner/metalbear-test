@@ -1,0 +1,44 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+spec:
+  rules:
+  - host: guestbook.local
+    http:
+      paths:
+      - path: /rpush
+        pathType: Prefix
+        backend:
+          service:
+            name: api
+            port:
+              number: 3000
+      - path: /lrange
+        pathType: Prefix
+        backend:
+          service:
+            name: api
+            port:
+              number: 3000
+      - path: /info
+        pathType: Prefix
+        backend:
+          service:
+            name: api
+            port:
+              number: 3000
+      - path: /env
+        pathType: Prefix
+        backend:
+          service:
+            name: api
+            port:
+              number: 3000
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: web
+            port:
+              number: 80

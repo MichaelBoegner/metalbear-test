@@ -1,7 +1,7 @@
 {
     "feature": {
         "network": {
-            "incoming": "mirror",
+            "incoming": "steal",
             "outgoing": true
         },
         "fs": "read",
