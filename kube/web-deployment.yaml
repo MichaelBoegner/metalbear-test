@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: web
-          image: cmikebdocker/web:frontend-1   
+          image: cmikebdocker/web:1   
           ports:
             - containerPort: 80

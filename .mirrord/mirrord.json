@@ -5,7 +5,7 @@
             "outgoing": true
         },
         "fs": "read",
-        "env": true
+        "env": false
     },
     "target": {
         "path": "deployment/guestbook",
