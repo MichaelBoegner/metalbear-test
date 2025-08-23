@@ -1,14 +1,10 @@
 {
     "feature": {
         "network": {
-            "incoming": "steal",
+            "incoming": "mirror",
             "outgoing": true
         },
         "fs": "read",
         "env": false
-    },
-    "target": {
-        "path": "deployment/guestbook",
-        "namespace": "default"
     }
 }

@@ -54,7 +54,7 @@ func ListPushHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ListRangeHandler(w, r) 
+	ListRangeHandler(w, r)
 }
 
 func InfoHandler(w http.ResponseWriter, r *http.Request) {
