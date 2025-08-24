@@ -5,6 +5,6 @@
             "outgoing": true
         },
         "fs": "read",
-        "env": false
+        "env": true
     }
 }

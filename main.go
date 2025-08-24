@@ -82,6 +82,7 @@ func EnvHandler(w http.ResponseWriter, r *http.Request) {
 		writeError(w, fmt.Errorf("failed to encode environment: %v", err), http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("local machine envs")
 }
 
 func initializeRedisConnection(host string, maxRetries int) (*simpleredis.ConnectionPool, error) {
@@ -105,6 +106,14 @@ func initializeRedisConnection(host string, maxRetries int) (*simpleredis.Connec
 }
 
 func main() {
+	demoVal := os.Getenv("TEST_ENV")
+
+	if demoVal != "" {
+		log.Printf("TEST_ENV exists and is %s!\n", demoVal)
+	} else {
+		log.Println("TEST_ENV does not exist.")
+	}
+
 	const maxRetries = 5
 
 	var err error
