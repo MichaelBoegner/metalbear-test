@@ -4,7 +4,9 @@
             "incoming": "mirror",
             "outgoing": true
         },
-        "fs": "read",
+        "fs": {
+            "mode": "local"
+        },
         "env": true
     }
 }
